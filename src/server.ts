@@ -1,6 +1,8 @@
 import express from "express";
+import dotenv from "dotenv";
 import { createProxyMiddleware } from "http-proxy-middleware";
 
+dotenv.config();
 const app = express();
 
 app.get("/", (_, res) => {
@@ -21,6 +23,6 @@ app.use(
   })
 );
 
-app.listen(8020, () => {
-  console.log("server listens to port:8020");
+app.listen(process.env.PORT, () => {
+  console.log(`server listens to port:${process.env.PORT}`);
 });

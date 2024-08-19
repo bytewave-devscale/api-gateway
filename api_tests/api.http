@@ -1,5 +1,15 @@
-### get /
-GET http://localhost:8020
+@host=http://localhost:8020
 
-### proxy user
-GET http://localhost:8020/api/v1/user/all
+### get /
+GET {{host}}/
+
+### proxy all users
+GET {{host}}/api/v1/user/all
+
+
+### proxy one user by id
+GET {{host}}/api/v1/user/66bdae3591692e10ba504221
+
+
+### proxy one user by email
+GET {{host}}/api/v1/user/email/bytewave@mail.com
