@@ -1,0 +1,5 @@
+### get /
+GET http://localhost:8020
+
+### proxy user
+GET http://localhost:8020/api/v1/user/all
