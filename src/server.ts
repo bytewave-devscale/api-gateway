@@ -19,7 +19,7 @@ app.use(
 app.use(
   "/api/v1/auth",
   createProxyMiddleware({
-    target: `${process.env.AUTH_API_URI}/api/v1/user`,
+    target: `${process.env.AUTH_API_URI}/api/v1/auth`,
   })
 );
 

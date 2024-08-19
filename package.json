@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon ./src/server.ts",
     "build": "tsc",
-    "start": "node --no-decpreation ./dist/server.js"
+    "start": "node --no-deprecation ./dist/server.js"
   },
   "keywords": [],
   "author": "",
