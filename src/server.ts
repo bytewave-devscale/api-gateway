@@ -23,6 +23,13 @@ app.use(
   })
 );
 
+app.use(
+  "/api/v1/thread",
+  createProxyMiddleware({
+    target: `${process.env.THREAD_API_URI}/api/v1/thread`,
+  })
+);
+
 app.listen(process.env.PORT, () => {
   console.log(`server listens to port:${process.env.PORT}`);
 });
