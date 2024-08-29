@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 import { createProxyMiddleware } from "http-proxy-middleware";
 
 dotenv.config();
@@ -8,6 +9,8 @@ const app = express();
 app.get("/", (_, res) => {
   res.status(200).send("api-gateway, bytewaveForum");
 });
+
+app.use(cors());
 
 app.use(
   "/api/v1/user",
