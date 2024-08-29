@@ -36,7 +36,7 @@ app.use(
 app.use(
   "/api/v1/reply",
   createProxyMiddleware({
-    target: `${process.env.REPLY_API_URI}/api/v1/thread`,
+    target: `${process.env.REPLY_API_URI}/api/v1/reply`,
   })
 );
 
