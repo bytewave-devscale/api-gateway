@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon ./src/server.ts",
-    "build": "tsc",
+    "build": "tsc && cp -r ./src/public/ ./dist/",
     "start": "node --no-deprecation ./dist/server.js"
   },
   "keywords": [],

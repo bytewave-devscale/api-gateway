@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thread Route Documentation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      h1 {
+        color: #333;
+        margin-bottom: 10px;
+      }
+      h2 {
+        color: #666;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+      pre {
+        background-color: #f0f0f0;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      .container {
+        max-width: 800px;
+        margin: auto;
+      }
+      .route {
+        margin-bottom: 20px;
+      }
+      .route h2 {
+        margin-top: 0;
+      }
+      .route .description {
+        margin-bottom: 10px;
+      }
+      .route .request-body {
+        margin-bottom: 10px;
+      }
+      .route .response-example {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- auth api documentation -->
+    <div class="container">
+      <h1>Auth Route Documentation</h1>
+      <div class="route">
+        <h2>POST /api/v1/auth/register</h2>
+        <div class="description">
+          <p>Description: Register a new user</p>
+        </div>
+        <div class="request-body">
+          <p>Request Body Example:</p>
+          <pre>
+{
+    "username":"username",
+    "email": "user@example.com",
+    "password": "password"
+}
+          </pre>
+        </div>
+      </div>
+
+      <div class="route">
+        <h2>POST /api/v1/auth/login</h2>
+        <div class="description">
+          <p>Description: Login a user</p>
+        </div>
+        <div class="request-body">
+          <p>Request Body Example:</p>
+          <pre>
+{
+    "email": "user@example.com",
+    "password": "password"
+}
+          </pre>
+        </div>
+      </div>
+      <div class="route">
+        <h2>POST /api/v1/auth/logout</h2>
+        <div class="description">
+          <p>Description: Logout a user</p>
+        </div>
+        <div class="request-body">
+          <p>Request Body Example</p>
+        </div>
+        <pre>
+{
+    {
+      "accessToken": "accessToken",
+      "refreshToken": "refreshToken"
+    }
+}
+      </pre
+        >
+      </div>
+
+      <div class="route">
+        <h2>POST /api/v1/auth/logout/all</h2>
+        <div class="description">
+          <p>Description: Logout all device of a user</p>
+        </div>
+        <div class="request-body">
+          <p>Request Body Example</p>
+        </div>
+        <pre>
+      {
+      "accessToken": "accessToken",
+      "refreshToken": "refreshToken"
+      }
+      </pre
+        >
+      </div>
+    </div>
+
+    <!-- user api documentation -->
+    <div class="container">
+      <h1>User Route Documentation</h1>
+      <div class="route">
+        <h2>GET /api/v1/user</h2>
+        <div class="description">
+          <p>Description: Get all users</p>
+        </div>
+        <div class="request-body">
+          <p>Request Body: None</p>
+        </div>
+      </div>
+
+      <div class="route">
+        <h2>GET /api/v1/user/email/:email</h2>
+        <div class="description">
+          <p>Description: Get a user by email</p>
+        </div>
+        <div class="request-body">
+          <p>Request Body: None</p>
+        </div>
+      </div>
+
+      <div class="route">
+        <h2>GET /api/v1/user/:id</h2>
+        <div class="description">
+          <p>Description: Get a user by ID</p>
+        </div>
+        <div class="request-body">
+          <p>Request Body: None</p>
+        </div>
+      </div>
+
+      <div class="route">
+        <h2>POST /api/v1/user</h2>
+        <div class="description">
+          <p>Description: Create a new user</p>
+        </div>
+        <div class="request-body">
+          <p>Request Body Example:</p>
+          <pre>
+{
+  "email": "user@example.com",
+  "password": "password",
+  "tokens":{
+    "accessToken":"accessToken",
+    "refreshToken":"refreshToken"
+  }
+}
+      </pre
+          >
+        </div>
+      </div>
+
+      <div class="route">
+        <h2>PATCH /api/v1/user</h2>
+        <div class="description">
+          <p>Description: Update a user</p>
+        </div>
+        <div class="request-body">
+          <p>Request Body Example:</p>
+          <pre>
+{
+  "email": "newuser@example.com",
+  "password": "newpassword"
+}
+      </pre
+          >
+        </div>
+      </div>
+
+      <div class="route">
+        <h2>DELETE /api/v1/user</h2>
+        <div class="description">
+          <p>Description: Delete a user</p>
+        </div>
+        <div class="request-body">
+          <p>Request Body Example:</p>
+          <pre>
+{
+  "tokens": {
+    "accessToken": "accessToken",
+    "refreshToken": "refreshToken"
+  }
+}
+      </pre
+          >
+        </div>
+      </div>
+    </div>
+    <!-- thread api documentation -->
+    <div class="container">
+      <h1>Thread Route Documentation</h1>
+      <div class="route">
+        <h2>GET /api/v1/thread</h2>
+        <div class="description">
+          <p>Description: Get all threads</p>
+        </div>
+        <div class="request-body">
+          <p>Request Body: None</p>
+        </div>
+      </div>
+
+      <div class="route">
+        <h2>POST /api/v1/thread/</h2>
+        <div class="description">
+          <p>Description: Create a new thread</p>
+        </div>
+        <div class="request-body">
+          <p>Request Body Example:</p>
+          <pre>
+{
+    "title": "thread title",
+    "content": "thread content",
+    "tokens": {
+        "accessToken": "accessToken",
+        "refreshToken": "refreshToken"
+    }
+}
+            </pre
+          >
+        </div>
+      </div>
+
+      <div class="route">
+        <h2>PATCH /api/v1/thread/:threadId</h2>
+        <div class="description">
+          <p>Description: Update a thread</p>
+        </div>
+        <div class="request-body">
+          <p>Request Body Example:</p>
+          <pre>
+{
+    "title": "new thread title",
+    "content": "new thread content",
+    "tokens": {
+        "accessToken": "accessToken",
+        "refreshToken": "refreshToken"
+    }
+}
+            </pre
+          >
+        </div>
+      </div>
+
+      <div class="route">
+        <h2>DELETE /api/v1/thread/:threadId</h2>
+        <div class="description">
+          <p>Description: Delete a thread</p>
+        </div>
+        <div class="request-body">
+          <p>Request Body Example</p>
+          <pre>
+{
+    "tokens": {
+        "accessToken": "accessToken",
+        "refreshToken": "refreshToken"
+    }
+}
+            </pre
+          >
+        </div>
+      </div>
+    </div>
+    <!-- reply api documentation -->
+    <div class="container">
+      <h1>Reply Route Documentation</h1>
+      <div class="route">
+        <h2>GET /api/v1/reply</h2>
+        <div class="description">
+          <p>Description: Get all replies</p>
+        </div>
+        <div class="request-body">
+          <p>Request Body: None</p>
+        </div>
+      </div>
+      <div class="route">
+        <h2>GET /api/v1/reply/thread/:threadId</h2>
+        <div class="description">
+          <p>Description: Get replies by thread ID</p>
+        </div>
+        <div class="request-body">
+          <p>Request Body: None</p>
+        </div>
+      </div>
+      <div class="route">
+        <h2>GET /api/v1/reply/author/:replyAuthorId</h2>
+        <div class="description">
+          <p>Description: Get replies by reply author ID</p>
+        </div>
+        <div class="request-body">
+          <p>Request Body: None</p>
+        </div>
+      </div>
+      <div class="route">
+        <h2>GET /api/v1/reply/:replyId</h2>
+        <div class="description">
+          <p>Description: Get a reply by ID</p>
+        </div>
+        <div class="request-body">
+          <p>Request Body: None</p>
+        </div>
+      </div>
+      <div class="route">
+        <h2>POST /api/v1/reply/</h2>
+        <div class="description">
+          <p>Description: Create a new reply</p>
+        </div>
+        <div class="request-body">
+          <p>Request Body Example:</p>
+          <pre>
+{
+    "threadId": "threadId",
+    "content": "reply content",
+    "tokens": {
+        "accessToken": "accessToken",
+        "refreshToken": "refreshToken"
+    }
+}
+                </pre
+          >
+        </div>
+      </div>
+      <div class="route">
+        <h2>PATCH /api/v1/reply/:replyId</h2>
+        <div class="description">
+          <p>Description: Update a reply</p>
+        </div>
+        <div class="request-body">
+          <p>Request Body Example:</p>
+          <pre>
+{
+    "content": "new reply content",
+    "tokens": {
+        "accessToken": "accessToken",
+        "refreshToken": "refreshToken"
+    }
+}
+                </pre
+          >
+        </div>
+      </div>
+      <div class="route">
+        <h2>DELETE /api/v1/reply/:replyId</h2>
+        <div class="description">
+          <p>Description: Delete a reply</p>
+        </div>
+        <div class="request-body">
+          <p>Request Body Example:</p>
+          <pre>
+{
+    "tokens": {
+        "accessToken": "accessToken",
+        "refreshToken": "refreshToken"
+    }
+}
+                </pre
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

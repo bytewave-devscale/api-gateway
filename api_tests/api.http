@@ -1,24 +1,17 @@
-@host=http://localhost:8020
+@host=http://103.82.92.117:8020
+@accesstoken="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmQxMmE0YTM1NDFiZTZjOGJhMmRjNGIiLCJpYXQiOjE3MjQ5ODM4ODIsImV4cCI6MTcyNDk4NDc4Mn0.x2xgNSkPT7-xlpCMdZGcub8enshHrZanZ0VQ2Kct57Y"
+@refreshtoken="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmQxMmE0YTM1NDFiZTZjOGJhMmRjNGIiLCJpYXQiOjE3MjQ5ODM4ODIsImV4cCI6MTcyNTU4ODY4Mn0.6nGFL-Gb2umIJ-6s2gje2aVMX1H1vvZoWt00oTNj3nw"
 
-### get /
-GET {{host}}/
-
-### proxy all users
-GET {{host}}/api/v1/user/all
-
-
-### proxy one user by id
-GET {{host}}/api/v1/user/66bdae3591692e10ba504221
+### get all users
+GET {{host}}/api/v1/user
 
 
-### proxy one user by email
-GET {{host}}/api/v1/user/email/bytewave@mail.com
-
-### proxy login user
-POST {{host}}/api/v1/auth/logout/all
+### register new user
+POST {{host}}/api/v1/auth/register
 Content-Type: application/json
 
 {
-    "email":"bytewave@mail.com",
+    "username": "Wahyu",
+    "email":"wahyu@mail.com",
     "password":"rahasia123"
 }
